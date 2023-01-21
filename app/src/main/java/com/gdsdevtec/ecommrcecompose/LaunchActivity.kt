@@ -19,16 +19,12 @@ class LaunchActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val navController = rememberNavController()
             EcommerceComposeTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Navigation(
-                        navController = navController,
-                        scope = CoroutineScope(Dispatchers.IO)
-                    )
+                    Navigation()
                 }
             }
         }

@@ -6,6 +6,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.gdsdevtec.ecommrcecompose.screens.Home
 import com.gdsdevtec.ecommrcecompose.screens.Login
 import com.gdsdevtec.ecommrcecompose.screens.Register
@@ -20,11 +21,10 @@ import kotlinx.coroutines.flow.collectLatest
 //funcao que navega
 @Composable
 fun Navigation(
-    navController: NavHostController,
+    navController: NavHostController = rememberNavController(),
     startDestination: String = SPLASH,
-    scope: CoroutineScope
 ) {
-    ObserveNavigation(navController = navController, scope = scope)
+    ObserveNavigation(navController = navController)
     NavHost(navController = navController, startDestination = startDestination) {
         composable(Screen.Splash.route) { Splash() }
         composable(Screen.Home.route) { Home() }
@@ -34,8 +34,8 @@ fun Navigation(
 }
 
 @Composable
-fun ObserveNavigation(navController: NavHostController, scope: CoroutineScope) {
-    val navigationManager: NavigationManager = NavigationManager(scope)
+fun ObserveNavigation(navController: NavHostController) {
+    val navigationManager: NavigationManager = NavigationManager()
     val dispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
 
     LaunchedEffect(Unit) {

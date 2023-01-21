@@ -46,7 +46,7 @@ fun EcommerceAppBar(
         },
         navigationIcon = onClickBackArrow?.let { safe ->
             {
-                IconButton(onClick = { safe }) {
+                IconButton(onClick = { safe() }) {
                     Icon(Icons.Default.ArrowBack, contentDescription = null)
                 }
             }

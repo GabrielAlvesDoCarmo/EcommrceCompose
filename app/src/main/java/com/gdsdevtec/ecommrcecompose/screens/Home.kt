@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.gdsdevtec.ecommrcecompose.ui.components.EcommerceAppBar
+import com.gdsdevtec.ecommrcecompose.utils.ConstantsScreen
 
 @Composable
 fun Home() {
@@ -14,7 +15,7 @@ fun Home() {
 @Composable
 fun HomeScreen() {
     Scaffold(
-        topBar = { EcommerceAppBar(title = "Home") {} },
+        topBar = { EcommerceAppBar(title =ConstantsScreen.HOME) {} },
         backgroundColor = Color.White
     ) {
 

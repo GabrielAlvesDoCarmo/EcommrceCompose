@@ -3,10 +3,12 @@ package com.gdsdevtec.ecommrcecompose.navigation
 import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.navOptions
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 //gerenciamento de acoes de navegacoao e emissao do evento
-class NavigationManager(private val scope: CoroutineScope) {
+class NavigationManager {
+    private val scope = CoroutineScope(Dispatchers.IO)
     var navEvent: MutableSharedFlow<NavigationCommand> = MutableSharedFlow()
         private set
 

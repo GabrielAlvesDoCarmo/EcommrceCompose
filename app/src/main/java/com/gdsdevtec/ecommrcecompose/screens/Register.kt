@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.gdsdevtec.ecommrcecompose.ui.components.EcommerceAppBar
+import com.gdsdevtec.ecommrcecompose.utils.ConstantsScreen
 
 @Composable
 fun Register() {
@@ -14,7 +15,7 @@ fun Register() {
 @Composable
 fun RegisterScreen() {
     Scaffold(
-        topBar = { EcommerceAppBar(title = "Home") {} },
+        topBar = { EcommerceAppBar(title = ConstantsScreen.REGISTER) {} },
         backgroundColor = Color.White
     ) {
 
@@ -24,5 +25,5 @@ fun RegisterScreen() {
 @Preview
 @Composable
 fun previewRegisterScreen() {
-    Home()
+    Register()
 }
